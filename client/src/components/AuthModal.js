@@ -26,8 +26,7 @@ const AuthModal = ({setShowModal, isSignUp}) =>{
             if(!isSignUp){
                 setError('INVALID USERNAME OR PASSWORD!')
             }
-            const response = await axios.post(`http://localhost:8000/${isSignUp ? 'signup' : 'login'}`, {email, password})
-
+            const response = await axios.post(`https://tinder-clone-backend-avd.onrender.com:8000/${isSignUp ? 'signup' : 'login'}`, {email, password})
             setCookies('UserId', response.data.userId)
             setCookies('AuthToken', response.data.token)
 

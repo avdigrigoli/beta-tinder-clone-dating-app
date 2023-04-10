@@ -10,7 +10,7 @@ const MatchesDisplay = ({ matches, setClickedUser }) => {
 
     const getMatches = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/users", {
+            const response = await axios.get("https://tinder-clone-backend-avd.onrender.com:8000/users", {
                 params: { userIds: JSON.stringify(matchedUserIds) }
             })
             setMatchedProfiles(response.data)
